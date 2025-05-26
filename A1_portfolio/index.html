@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--uses utf-8 encoding  -->
+        <meta charset="UTF-8">
+        <!--
+            name describes the pages topic - viewport tells you are providing instructions
+            about viewport - the visible area of the web page on a device
+
+            content=... a list of k/v pairs that configure how the page is scaled and sized
+            k1 - make the viewport width match the devices screen width
+            initial scale - start with no zoom
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Index page for my portfolio</title> <!-- meta data for name of html-->
+        <!-- bootstrap CSS -->
+            <!--
+            CDN - content delivery network a geographically distributed
+
+            network of servers that serve static files - alternative to downloading bootstrap
+
+            link - html element for including external ressources like stylesheets
+            href-   cdn.jsdelivr,net is the base URL of jsDelivr CDN
+                    npm/bootstrap@5.4.0 npm endpoint that grabs the associated package
+                    dist/css/boostrap.min.css the minified css file from boostrap
+            rel - tells browser its a link to a stylesheet
+            integrity - when browser downloads a file, it computes its own
+                        SHA-384 hash and compares it to this value, if it
+                        doesnt match it doesnt add
+            crossorigin - enable CORS for the fetch without sending credentials(cookies,HTTP auth)
+                           required in combination with integrity so that the browser is allowed
+                           to check the hash on a cross-origin request
+            -->
+        <!--load caslon font -->
+        <link
+                href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;500;600&display=swap"
+                rel="stylesheet"
+        />
+
+        <!-- bootstrap css-->
+        <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+                rel="stylesheet"
+                integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+                crossorigin="anonymous"
+            />
+
+        <!-- css overrides-->
+        <link rel="stylesheet", href="css/custom.css"/>
+
+
+        <!--css bootstrap-->
+        <style>
+            /* 1. Load Caslon font from Google */
+            @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;500;600&display=swap');
+
+            .hero-wrapper {
+                position: relative;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            /* 1. Full-page background */
+            body {
+                margin: 0;                          /* kill default body margins */
+                background-image: url('../img/cn-extension.png');
+                background-size: cover;             /* scale & crop to always fill */
+                background-repeat: no-repeat;       /* never tile */
+                background-position: center top;    /* keep the tower centered horizontally, pinned to the top */
+                font-family: 'Libre Caslon Text', serif;  /* apply  Caslon font  */
+                color: #555555; /* slightly darker grey*/
+            }
+
+            .hero-overlay {
+                position: absolute;     /* sit on top of the hero image container */
+                top: 0;                 /* align to the top edge */
+                left: 0;                /* align to the left edge */
+                right:0;
+                width: 50vw;            /* span full width of the hero */
+                /* span full height of the hero */
+                pointer-events: none;   /* let clicks pass through underneath */
+                display: flex;          /* enable flex positioning of content */
+                align-items: start;     /* pin content to the top */
+                padding-top: 15rem;   /* add space inside: top/bottom and left/right */
+                padding-right: 10rem;
+                z-index: 1;             /* place above the image but below other layers */
+                justify-content: start;
+
+
+
+            }
+
+
+            .hero-overlay .lead  {
+                font-family: 'Libre Caslon Text', serif;  /* apply  Caslon font  */
+                font-weight: 500;     /* use a medium weight for subtle emphasis */
+                font-size: 1.25rem;    /* enlarge the text to 1.5× the base font size */
+                line-height: 1.6;     /* space lines at 1.4× the font size for readability */
+                color: #555555;
+                margin-top: 0.5rem;   /* add a small gap above this paragraph */
+                width: 100%;
+                padding-right: 3rem;
+            }
+
+            .hero-overlay .display-3 {
+
+                font-family: 'Libre Caslon Text', serif;  /* apply  Caslon font  */
+                color: #555555; /* slightly darker grey*/
+            }
+
+            .projects-container {
+                width: 50vw; /*half of the page*/
+                padding-left: 16rem;
+                padding-right: 1rem;
+                margin:0; /* remove default container centering*/
+            }
+
+            .p1 {
+                max-width: 100%;
+            }
+
+            .sinclair {
+                width: 160px;
+                height: auto;
+                border-radius: 0.5rem;
+                object-fit: cover;
+                flex-shrink: 0;
+
+            }
+
+            .project-details {
+                flex:1;
+                max-width: 100%;
+            }
+
+            .durak {
+                width: 160px;
+                height: auto;
+                border-radius: 0.5rem;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+
+            .p2 {
+                max-width: 100%;
+            }
+
+            .optimize {
+                width: 160px;
+                height: auto;
+                border-radius: 0.5rem;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+
+            .p3 {
+                max-width: 100%;
+            }
+
+            .DYEH {
+                width: 160px;
+                height: auto;
+                border-radius: 0.5rem;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+
+
+
+
+
+
+
+
+
+        </style>
+
+    </head>
+
+
+
+    <body>
+
+        <div class="d-flex gap-3 p-3">
+            <!--resume button -->
+            <a href="resume.pdf" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">
+                Resume
+            </a>
+
+
+            <!-- linkedin button-->
+            <a href="https://www.linkedin.com/in/david-gvozdyev/" class="btn btn-outline-dark" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+
+        <!-- hero wrapper -->
+        <div class="hero-wrapper position-relative">
+
+            <!-- overlay of text with name that sits on top of image -->
+            <div class="hero-overlay
+            position-absolute
+            top-0
+            start-0
+            w-50
+            d-flex
+            align-items-start
+            px-2 "
+            >
+                <div class="container text-dark-grey">
+                    <h1 class="display-3" style="margin-left: 6rem;">Hi, I'm David Gvozdyev</h1>
+                    <p class="lead fs-4 me-5" style="margin-left: 6.5rem; padding-right: 7rem; padding-top:0.5rem;">I'm a 3rd year Computer Scientist student from the GTA studying at the University of Ottawa.
+                    </p>
+                    <p class="lead fs-4 me-5" style="margin-left: 6.5rem;"> I design fully functional websites
+                       using the 6 design principles that I'm currently learning in my UI/UX design course.
+                        Starting from scratch I turn ideas into reality using industry languages such as HTML, CSS, JavaScript, and Bootstrap. </p>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- section for projects under the hero overlay-->
+        <section id="projects" class="projects-container py-5">
+
+
+            <!-- p1 -->
+            <div class="p1 mb-5 d-flex align-items-start">
+                <!--img-->
+                <img src="/img/sinclair.png" class="sinclair me-4" alt="Sinclair Fades">
+
+                <!--text block on the right-->
+                <div class="project-details">
+                    <h3 class="mb-2">Sinclair Fades</h3>
+                    <p class="mb-3" style="margin-right: 12rem;">Book a haircut with the best barbers in town at Sinclair Fades. </p>
+                    <a href="coming-soon.html" class="btn btn-outline-dark">View Project</a>
+                </div>
+            </div>
+
+            <!--p2-->
+            <div class="p2 mb-5 d-flex align-items-start">
+                <!--img-->
+                <img src="/img/durak.png" class="durak me-4" alt="Durak">
+
+                <!-- text block on the right-->
+                <div class="project2-details">
+                    <h3 class="mb-2">Durak</h3>
+                    <p class="mb-3" style="margin-right:12rem;">Play a classic soviet game against a computer.</p>
+                    <a href="coming-soon.html" class="btn btn-outline-dark">View Project</a>
+                </div>
+            </div>
+
+            <!--p3-->
+            <div class="p3 mb-5 d-flex align-items-start">
+                <!--img-->
+                <img src="/img/optimize.png" class="optimize me-4" alt="Optimize">
+
+                <!-- text block on the right-->
+                <div class="project3-details">
+                    <h3 class="mb-2">Optimize</h3>
+                    <p class="mb-3" style="margin-right:12rem;">Supplements proven to optimize your brain and physical health.</p>
+                    <a href="coming-soon.html" class="btn btn-outline-dark">View Project</a>
+                </div>
+            </div>
+
+            <!--p4-->
+            <div class="p4 mb-5 d-flex align-items-start">
+                <!--img-->
+                <img src="/img/DYEH.png" class="DYEH me-4" alt="DYEH">
+
+                <!-- text block on the right-->
+                <div class="project4-details">
+                    <h3 class="mb-2">Do You Even Hoop?</h3>
+                    <p class="mb-3" style="margin-right:12rem;">Track the NBA with stats like MVP contenders, ROTY, and More!</p>
+                    <a href="coming-soon.html" class="btn btn-outline-dark">View Project</a>
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+                integrity = "sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+                crossorigin="anonymous">
+        </script>
+
+
+    </body>
+
+
+
+</html>
